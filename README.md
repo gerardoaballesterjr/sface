@@ -1,7 +1,7 @@
 # Sface
 Real-time face analysis for age, gender and emotion recognition using convolutional neural networks
 ***
-**Commands**\
+**Commands**
 ```
 python3 manage.py reset
 ```
