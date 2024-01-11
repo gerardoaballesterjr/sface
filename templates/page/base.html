@@ -1,0 +1,15 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block main %}
+    <div id="base" hx-swap-oob="true">
+        {% block base %}{% endblock base %}
+        <div class="text-center">
+            <div class="d-none d-lg-inline-block">
+                <a href="javascript:void(0)" class="footer-link me-4" hx-get="{% url 'page:about' %}" hx-target="#base" hx-push-url="true">About</a>
+                <a href="javascript:void(0)" class="footer-link me-4" hx-get="{% url 'page:contact' %}" hx-target="#base" hx-push-url="true">Contact</a>
+                <a href="javascript:void(0)" class="footer-link me-4" hx-get="{% url 'page:privacy-policy' %}" hx-target="#base" hx-push-url="true">Privacy Policy</a>
+            </div>
+        </div>
+    </div>
+{% endblock main %}

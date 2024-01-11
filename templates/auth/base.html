@@ -1,0 +1,28 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block main %}
+<div class="container-xxl">
+    <div class="authentication-wrapper authentication-basic container-p-y">
+        <div class="authentication-inner">
+            <div class="card">
+                <div class="card-body">
+                    <div class="app-brand justify-content-center">
+                        <a href="{% url 'page:index' %}" class="app-brand-link gap-2">
+                            <span class="app-brand-logo demo">
+                                <!-- <svg width="25" viewBox="0 0 25 42" ... > ... </svg> -->
+                            </span>
+                            <span class="app-brand-text demo text-body fw-bold text-uppercase">
+                                Sface
+                            </span>
+                        </a>
+                    </div>
+                    <div id="base" hx-swap-oob="true">
+                        {% block base %}{% endblock base %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock main %}

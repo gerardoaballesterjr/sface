@@ -1,0 +1,12 @@
+{% extends 'page/base.html' %}
+{% load static %}
+
+{% block base %}
+    <div class="container-xxl container-p-y">
+        <div class="misc-wrapper">
+            <h2 class="mb-2 mx-2">
+                <a href="{% url 'core:main:index' %}">Go to Dashboard</a>
+            </h2>
+        </div>
+    </div>
+{% endblock base %}

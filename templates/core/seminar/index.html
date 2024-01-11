@@ -1,0 +1,42 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block base %}
+<div class="card">
+    <div class="card-header">
+        <div class="d-flex justify-content-between align-self-center">
+            <h5>{{ title }}</h5>
+            <a class="btn btn-primary" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#modal" hx-get="{% url 'core:seminar:create' %}" hx-target="#modal-content">Create</a>
+        </div>
+    </div>
+    <table class="table">
+        <caption class="ms-4"> List of {{ title }} </caption>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th class="text-center">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for object in object_list %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ object.name|truncatechars:30 }}</td>
+                    <td>{{ object.description|truncatechars:50 }}</td>
+                    <td class="text-center">
+                        <span class="badge bg-label-info me-1 cursor-pointer" hx-get="{{ object.get_detail_url }}" hx-target="#base" hx-push-url="true">Detail</span>
+                        <span class="badge bg-label-primary me-1 cursor-pointer" data-bs-toggle="modal" data-bs-target="#modal" hx-get="{{ object.get_update_url }}" hx-target="#modal-content">Update</span>
+                        <span class="badge bg-label-danger me-1 cursor-pointer" data-bs-toggle="modal" data-bs-target="#modal" hx-get="{{ object.get_delete_url }}" hx-target="#modal-content">Delete</span>
+                    </td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td class="text-center" colspan="4">No {{ title|lower }} is available.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock base %}

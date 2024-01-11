@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{% static 'assets/vendor/fonts/boxicons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/css/core.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/css/theme-default.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/demo.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/libs/apex-charts/apex-charts.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/css/pages/page-auth.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/css/pages/page-misc.css' %}">
+    <style>
+        .cursor-pointer {cursor: pointer;}
+    </style>
+    <script src="{% static 'assets/vendor/js/helpers.js' %}"></script>
+    <script src="{% static 'assets/js/config.js' %}"></script>
+    <script src="{% static 'assets/js/htmx.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/libs/jquery/jquery.js' %}"></script>
+</head>
+<body>
+    {% block main %}{% endblock main %}
+    <script src="{% static 'assets/vendor/libs/popper/popper.js' %}"></script>
+    <script src="{% static 'assets/vendor/js/bootstrap.js' %}"></script>
+    <script src="{% static 'assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js' %}"></script>
+    <script src="{% static 'assets/vendor/js/menu.js' %}"></script>
+    <script src="{% static 'assets/vendor/libs/apex-charts/apexcharts.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+    <script src="{% static 'assets/js/dashboards-analytics.js' %}"></script>
+    <script>
+        htmx.on('form', (event) => {
+            $('.modal').modal('hide');
+            htmx.ajax('GET', event.detail.path, '#base');
+        });
+    </script>
+</body>
+</html>

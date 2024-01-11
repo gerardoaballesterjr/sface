@@ -1,0 +1,11 @@
+{% load static %}
+
+<div class="modal-header">
+    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+
+<div class="modal-body pt-0">
+    <canvas id="canvas" class="w-100 h-auto rounded" data-websocket="{{ websocket }}"></canvas>
+</div>
+
+<script src="{% static 'js/seminar/stream.js' %}"></script>
