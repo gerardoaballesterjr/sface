@@ -13,6 +13,6 @@ class HelpView(mixins.LoginRequiredMixin, generic.TemplateView):
     template_name = 'core/main/help.html'
     extra_context = {'title': 'Help'}
 
-class FAQView(mixins.LoginRequiredMixin, generic.TemplateView):
-    template_name = 'core/main/FQA.html'
-    extra_context = {'title': 'FQA'}
+class FrequentlyAskedQuestionsView(mixins.LoginRequiredMixin, generic.TemplateView):
+    template_name = 'core/main/frequently-asked-questions.html'
+    extra_context = {'title': 'Frequently Asked Questions'}
