@@ -5,36 +5,20 @@
     <div class="layout-wrapper layout-content-navbar layout-without-menu">
         <div class="layout-container">
             <div class="layout-page">
-                <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme" id="layout-navbar">
-                    <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
-                        <ul class="navbar-nav flex-row align-items-center">
-                            <li class="nav-item me-3">
-                                <a href="javascript:void(0)" class="me-1" hx-get="{% url 'page:index' %}" hx-target="#base" hx-push-url="true">Home</a>
-                            </li>
-                            <li class="nav-item me-3">
-                                <a href="javascript:void(0)" class="me-1" hx-get="{% url 'page:about' %}" hx-target="#base" hx-push-url="true">About</a>
-                            </li>
-                            <li class="nav-item me-3">
-                                <a href="javascript:void(0)" class="me-1" hx-get="{% url 'page:contact' %}" hx-target="#base" hx-push-url="true">Contact</a>
-                            </li>
-                            <li class="nav-item me-3">
-                                <a href="javascript:void(0)" class="me-1" hx-get="{% url 'page:privacy-policy' %}" hx-target="#base" hx-push-url="true">Privacy Policy</a>
-                            </li>
-                        </ul>
-                        <ul class="navbar-nav flex-row align-items-center ms-auto">
-                            <li class="nav-item me-3">
-                                <a href="{% url 'core:main:index' %}" class="me-1">
-                                    Dashboard
-                                </a>
-                            </li>
-                        </ul>
+                <div class="page-heading text-white d-flex align-items-center justify-content-center">
+                    <div class="container py-5 text-center">
+                        <h1 class="font-weight-bold fs-1 text-white">
+                            Seminar Face Analysis
+                        </h1>
+                        <p class="font-italic">
+                            Dive into the true emotions of your audience: Real-time face analysis for school seminar. <br> Capture genuine reactions and optimize your seminars with cutting-edge technology.
+                        </p>
+                        <a href="{% url 'core:main:index' %}" role="button" class="btn btn-primary px-5">Dashboard</a>
                     </div>
-                </nav>
+                </div>
                 <div class="content-wrapper">
-                    <div class="container-xxl flex-grow-1 container-p-y">
-                        <div id="base" hx-swap-oob="true">
-                            {% block base %}{% endblock base %}
-                        </div>
+                    <div id="base" hx-swap-oob="true">
+                        {% block base %}{% endblock base %}
                     </div>
                     <footer class="content-footer footer bg-footer-theme">
                         <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
